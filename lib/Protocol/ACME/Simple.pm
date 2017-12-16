@@ -54,7 +54,7 @@ sub makeAcme {
       %$result,
    };
 
-   unless ($noacme) {
+   unless ($config->{noacme}) {
       my $acme = undef;
       eval {
          #print "REF:".$accountkey.":".ref($accountkey).":".$$accountkey.":\n";
