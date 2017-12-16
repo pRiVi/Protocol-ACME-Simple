@@ -3,7 +3,7 @@ package Protocol::ACME::Simple;
 use strict;
 use Protocol::ACME;
 use Protocol::ACME::Challenge::LocalFile;
-use x509factory::X509Factory qw(
+use X509Factory qw(
    $TYPSERVER
 );
 
