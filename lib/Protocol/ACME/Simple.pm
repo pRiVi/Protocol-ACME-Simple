@@ -10,7 +10,6 @@ use x509factory::X509Factory qw(
 our $VERSION = "0.01";
 
 my $debug = 0;
-my $MINREFRESHTIME = 60*60*24*30;
 
 sub getHostPrefix {
    my $host = shift;
@@ -28,14 +27,6 @@ sub makeAcme {
    my $hosts = shift || [""];
    my $config = shift || {};
 
-   my $noacme = 0;
-   if (-s $domain.".crt") {
-      my $seconds = (time()-(stat($domain.".crt"))[9]);
-      print "DOMAIN:".$domain." ".$seconds." Sekunden alt\n"
-         if $debug;
-      return "last time successfully renewed ".$seconds." ago!"
-         unless ($seconds > $MINREFRESHTIME);
-   }
    my $config = {
       country      => "DE",
       state        => "Germany",
