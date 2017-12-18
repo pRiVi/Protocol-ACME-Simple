@@ -112,8 +112,6 @@ sub makeAcme {
    }
 }
 
-__END__
-
 =head1 NAME
 
 Protocol::ACME::Simple - ACME with certificates made simple
