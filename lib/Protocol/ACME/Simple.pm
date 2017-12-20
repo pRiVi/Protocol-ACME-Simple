@@ -44,7 +44,7 @@ sub makeAcme {
    $config->{flags} = $TYPSERVER
       unless(defined($config->{flags}));
 
-   my $result = x509factory::X509Factory::createCertificate($config);
+   my $result = X509Factory::createCertificate($config);
    return $result->{err} ? $result : {err => "Got no CSR !"}
       if (!$result->{csr} || $result->{err});
    print "CSR:".length($result->{csr})."\n"
